@@ -106,7 +106,9 @@ class MainActivity : AppCompatActivity() {
     val inputStream: InputStream? = context.contentResolver.openInputStream(uri)
     if (inputStream == null) return null
 
-    val tempFile = File(context.cacheDir, "receipt_upload.jpg")
+    val fileName = File(uri.path ?: "receipt_upload").name
+    val tempFile = File(context.cacheDir, fileName)
+
 
     try {
       inputStream.use { input ->
