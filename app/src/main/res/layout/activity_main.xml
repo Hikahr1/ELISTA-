@@ -1,53 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:background="#FAFAFA">
 
     <!-- Upload Button -->
     <Button
         android:id="@+id/btnUpload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Upload Receipt" />
+        android:text="Upload Receipt"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:elevation="4dp"
+        android:padding="10dp" />
 
-
+    <!-- Vendor Information -->
     <TextView
         android:id="@+id/tvVendor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Vendor: N/A"
-        android:paddingTop="8dp" />
+        android:paddingTop="12dp"
+        android:textSize="16sp"
+        android:textColor="#212121" />
 
+    <!-- Date Information -->
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Date: N/A" />
+        android:text="Date: N/A"
+        android:textSize="16sp"
+        android:textColor="#212121" />
 
+    <!-- Total Section -->
     <TextView
         android:id="@+id/tvTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total: ₱0.00"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:paddingTop="8dp"
         android:paddingBottom="8dp" />
 
-    <!-- Line Items Section -->
+    <!-- Line Items Header -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Line Items:"
         android:paddingTop="8dp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:textColor="#757575" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
 
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:paddingBottom="8dp" />
 
 </LinearLayout>

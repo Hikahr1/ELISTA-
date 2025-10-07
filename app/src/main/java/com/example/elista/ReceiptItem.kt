@@ -2,5 +2,6 @@ package com.example.elista
 
 data class ReceiptItem(
     val name: String,
-    val price: Double
+    val quantity: String,
+    val price: String
 )
